@@ -23,13 +23,10 @@ def user_info(city, country):
     speak(text)
 
 
-
-
 root = Tk()
 root.geometry("280x170")
-root.minsize(150,150)
-root.maxsize(280,170)
-
+root.minsize(150, 150)
+root.maxsize(280, 170)
 
 user_country = StringVar()
 user_city = StringVar()
@@ -39,22 +36,28 @@ frame_bg = Frame(root, background='#9AC5F4')
 frame_bg.pack(fill='both', expand=True)
 
 # adding head to frame_bg
-label_head = Label(frame_bg, text="Welcome to Python Weather Tracker", font=("Chakra Petch",10,"bold"),fg="white",bg="#27374D",borderwidth=5,relief="ridge")
+label_head = Label(frame_bg, text="Welcome to Python Weather Tracker", font=("Chakra Petch", 10, "bold"), fg="white",
+                   bg="#27374D", borderwidth=5, relief="ridge")
 label_head.grid(row=0, column=0, columnspan=2, padx=10, pady=5)
 
+# columnspan is used to specify the number of the columns that a widget should span
+# label_head widget spans two columns (column 0 and column 1) using columnspan=2
 
-label_country = Label(frame_bg, text="Enter the country", font=("Chakra Petch",10,"bold"), bg="#9AC5F4", fg="#321E1E")
+label_country = Label(frame_bg, text="Enter the country", font=("Chakra Petch", 10, "bold"), bg="#9AC5F4", fg="#321E1E")
 label_country.grid(row=1, column=0, padx=10, pady=5, sticky="w")
 
 entry_country = Entry(frame_bg, textvariable=user_country)
 entry_country.grid(row=1, column=1, padx=10, pady=5, sticky="w")
 
-
-label_city = Label(frame_bg, text="Enter the city", font=("Chakra Petch",10,"bold"), bg="#9AC5F4", fg="#321E1E")
+label_city = Label(frame_bg, text="Enter the city", font=("Chakra Petch", 10, "bold"), bg="#9AC5F4", fg="#321E1E")
 label_city.grid(row=2, column=0, padx=10, pady=5, sticky="w")
 
 entry_city = Entry(frame_bg, textvariable=user_city)
 entry_city.grid(row=2, column=1, padx=10, pady=5, sticky="w")
+
+
+# here sticky is used to set the widget's position relative to the cell
+# and anchor is used to set the reference point for the widget's position within the cell
 
 
 def user_input():
@@ -63,7 +66,8 @@ def user_input():
     user_info(city, country)
 
 
-button = Button(frame_bg, text="Apply", command=user_input, font=("Chakra Petch", 10, "bold"), fg="#321E1E", bg="white",padx=3)
+button = Button(frame_bg, text="Apply", command=user_input, font=("Chakra Petch", 10, "bold"), fg="#321E1E", bg="white",
+                padx=3)
 button.grid(row=3, column=1, sticky='s')
 
 # # delaying the function greet by 100 milliseconds
