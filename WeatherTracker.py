@@ -66,9 +66,13 @@ def user_input():
     user_info(city, country)
 
 
-button = Button(frame_bg, text="Apply", command=user_input, font=("Chakra Petch", 10, "bold"), fg="#321E1E", bg="white",
-                padx=3)
-button.grid(row=3, column=1, sticky='s')
+apply_button = Button(frame_bg, text="Apply", command=user_input, font=("Chakra Petch", 10, "bold"), fg="#321E1E",
+                      bg="white")
+apply_button.grid(row=3, column=1, sticky='nw', ipadx=3)
+# ipad is used to give internal space between the contents of a widget and the edges of widget
+
+quit_button = Button(frame_bg, text="Quit", command=quit, font=("Chakra Petch", 10, "bold"), fg="#321E1E", bg="white")
+quit_button.grid(row=3, column=1, sticky='ne', padx=13, ipadx=3)
 
 # # delaying the function greet by 100 milliseconds
 # # so that window is displayed before the greet function() is called
